@@ -1,0 +1,59 @@
+ SOLIÇÂO  DO CHATGPT  CONTA : nocsocram@gmail.com
+
+
+-- Conectar ao banco de dados "netbox"
+\c netbox;
+
+-- Conceder o privilégio CREATE no esquema público para a função "netbox"
+GRANT CREATE ON SCHEMA public TO netbox;
+
+
+2 na hora de instalar o netbox.
+
+root@netbox:~# sudo wget https://github.com/netbox-community/netbox/archive/refs/
+sudo tar -xzf v3.6.6.tar.gz -C /opt
+sudo ln -s /opt/netbox-3.6.6/ /opt/netbox
+--2023-11-30 20:32:47--  https://github.com/netbox-community/netbox/archive/refs/
+Resolving github.com (github.com)... 20.201.28.151
+Connecting to github.com (github.com)|20.201.28.151|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/netbox-community/netbox/tar.gz/refs/tags/v3
+--2023-11-30 20:32:47--  https://codeload.github.com/netbox-community/netbox/tar.
+Resolving codeload.github.com (codeload.github.com)... 20.201.28.149
+Connecting to codeload.github.com (codeload.github.com)|20.201.28.149|:443... con
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-gzip]
+Saving to: ‘v3.6.6.tar.gz.2’
+
+v3.6.6.tar.gz.2                 [    <=>                                    ]   6
+
+2023-11-30 20:32:49 (8,98 MB/s) - ‘v3.6.6.tar.gz.2’ saved [7280572]
+
+ln: failed to create symbolic link '/opt/netbox': File exists
+
+solução :
+
+Tentou criar um link simbólico chamado /opt/netbox apontando para o diretório extraído:
+
+sudo ln -s /opt/netbox-3.6.6/ /opt/netbox
+
+No entanto, parece que um arquivo ou diretório chamado /opt/netbox já existe, resultando no erro.
+
+Para resolver isso, você pode remover o /opt/netbox existente ou escolher um nome de destino diferente para o link simbólico. Aqui está um exemplo de remoção do /opt/netbox existente:
+
+V 3.6.6  IMPORTANTE ANOTAR
+
+
+sudo rm -r /opt/netbox
+sudo ln -s /opt/netbox-3.6.6/ /opt/netbox
+
+
+Por favor, tenha cuidado ao usar o comando rm, pois ele exclui permanentemente arquivos e diretórios. Certifique-se de estar removendo os arquivos corretos.
+
+Após resolver o problema, você deve conseguir prosseguir com a instalação. Se encontrar mais problemas ou tiver outras perguntas, sinta-se à vontade para perguntar!
+
+ok !
+
+
+
+
